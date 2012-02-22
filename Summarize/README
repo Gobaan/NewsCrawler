@@ -1,0 +1,17 @@
+This contains the summarization algorithm. They accept the old XML Format.
+
+Execute in two stages.
+First build models using
+  python crawlermodelmaker TargetFolder [Term_List]
+or using sentences 
+  python sentence_crawlermodelmaker TargetFolder [Term_List]
+
+two background models are created.
+  TargetFolder_[term_list].matched - model for articles containing every term
+  TargetFolder_[term_list].unmatched - model for articles missing at least one term
+
+Generate summaries by running
+  python summarizer TargetFolder BackgroundFolder [Term_List]
+
+or using sentences 
+  python sentence_summarizer TargetFolder BackgroundFolder [Term_List]

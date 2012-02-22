@@ -1,0 +1,5 @@
+This project contains three tools for news summary generation
+
+Parsers - Contains an automated crawler that searches the web for articles and extracts comments
+ParserGenerator - Assists in creating fast parsers by automating much of the process
+Summarizer - Takes the output of the parsers and generates summaries 

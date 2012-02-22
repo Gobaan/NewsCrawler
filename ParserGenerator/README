@@ -1,0 +1,18 @@
+This code is messy and still super hacked together for a prototype.
+
+
+Basically it has two stages. the first stage is launches a selenium browser, opens every web page in urls.txt and attempts to find the strings in urls.txt
+
+The second stage creates a classifier that can automatically extract the given text.
+
+Execute The following steps:
+
+1. Go to target site, copy url and three sentences from the section you want
+2. Place the text in file in the format
+  [url]|[text1]|[text2]|[text3]
+3. Launch Selenium Server
+4. python webprofiler.py
+5. python classifier.py
+6. Up to two guesses at the correct classifier will be output. Pick the one that fits you need.
+7. Optionally flesh out a rename function that helps determine the url required to fetch the comments
+

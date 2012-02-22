@@ -1,0 +1,157 @@
+2012-02-21 22:19:32,458 INFO | helper.py : 56 : MainProcess - fetching 49
+2012-02-21 22:19:38,319 INFO | googleBlogSearch.py : 58 : MainProcess - 49
+2012-02-21 22:19:39,267 INFO | googleBlogSearch.py : 63 : MainProcess - voices.yahoo.com
+2012-02-21 22:19:39,267 INFO | googleBlogSearch.py : 64 : MainProcess - 20
+2012-02-21 22:20:29,758 INFO | helper.py : 56 : MainProcess - fetching 0
+2012-02-21 22:20:30,040 INFO | googleBlogSearch.py : 58 : MainProcess - 49
+2012-02-21 22:20:30,998 INFO | googleBlogSearch.py : 63 : MainProcess - voices.yahoo.com
+2012-02-21 22:20:30,998 INFO | googleBlogSearch.py : 64 : MainProcess - 20
+2012-02-21 22:20:31,001 INFO | blogViewer.py : 10 : voices.yahoo.com - http://voices.yahoo.com/article/9353799/israeli-strike-deter-not-so-covert-iran-war-10930078.html Results/Israel+Iran+Bombing/voices.yahoo.com.1.2012
+2012-02-21 22:20:31,004 INFO | helper.py : 56 : voices.yahoo.com - fetching 20
+2012-02-21 22:20:32,766 INFO | googleBlogSearch.py : 63 : MainProcess - www.newsobserver.com
+2012-02-21 22:20:32,766 INFO | googleBlogSearch.py : 64 : MainProcess - 100
+2012-02-21 22:20:32,769 INFO | blogViewer.py : 10 : www.newsobserver.com - http://www.newsobserver.com/2012/02/14/1854348/israel-points-finger-at-iran-in.html Results/Israel+Iran+Bombing/www.newsobserver.com.1.2012
+2012-02-21 22:20:32,776 INFO | helper.py : 56 : www.newsobserver.com - fetching 100
+2012-02-21 22:20:34,528 INFO | googleBlogSearch.py : 63 : MainProcess - www.guardian.co.uk
+2012-02-21 22:20:34,528 INFO | googleBlogSearch.py : 64 : MainProcess - 103
+2012-02-21 22:20:34,546 INFO | blogViewer.py : 10 : www.guardian.co.uk - http://www.guardian.co.uk/commentisfree/2012/feb/21/attack-on-iran-criminal-stupidity?newsfeed=true Results/Israel+Iran+Bombing/www.guardian.co.uk.1.2012
+2012-02-21 22:20:34,548 INFO | helper.py : 56 : www.guardian.co.uk - fetching 102
+2012-02-21 22:20:36,154 INFO | googleBlogSearch.py : 63 : MainProcess - www.politico.com
+2012-02-21 22:20:36,155 INFO | googleBlogSearch.py : 64 : MainProcess - 100
+2012-02-21 22:20:36,158 INFO | blogViewer.py : 10 : www.politico.com - http://www.politico.com/news/stories/0212/72402.html Results/Israel+Iran+Bombing/www.politico.com.1.2012
+2012-02-21 22:20:36,165 INFO | helper.py : 56 : www.politico.com - fetching 100
+2012-02-21 22:20:36,888 INFO | googleBlogSearch.py : 63 : MainProcess - aptn.ca
+2012-02-21 22:20:36,889 INFO | googleBlogSearch.py : 64 : MainProcess - 0
+2012-02-21 22:20:36,889 WARNING | googleBlogSearch.py : 66 : MainProcess - GOOGLE NOT RETURNING ANYTHING
+2012-02-21 22:20:36,889 WARNING | googleBlogSearch.py : 67 : MainProcess - https://www.google.com/search?q=Israel+Iran+Bombing+site%3Aaptn.ca&num=100&hl=en&lr=&prmd=imvnsulr&sa=X&ei=KlzpTp35Dsjs2QX51ujaCA&ved=0CA0QpwUoBg&source=lnt&tbs=cdr%3A1%2Ccd_min%3A1%2F1%2F2012%2Ccd_max%3A2%2F30%2F2012&start=0&tbm=&complete=0
+2012-02-21 22:20:38,555 INFO | googleBlogSearch.py : 63 : MainProcess - online.wsj.com
+2012-02-21 22:20:38,555 INFO | googleBlogSearch.py : 64 : MainProcess - 101
+2012-02-21 22:20:38,558 INFO | blogViewer.py : 10 : online.wsj.com - http://online.wsj.com/article/SB10001424052970204795304577220810440933858.html Results/Israel+Iran+Bombing/online.wsj.com.1.2012
+2012-02-21 22:20:38,566 INFO | helper.py : 56 : online.wsj.com - fetching 100
+2012-02-21 22:20:55,746 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/content/print/front_pdf/1-A-Thu-January-12-12.pdf : __init__() takes exactly 2 arguments (3 given)
+2012-02-21 22:20:56,723 INFO | helper.py : 56 : www.newsobserver.com - fetching 100
+2012-02-21 22:20:57,540 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/20/1869488/iran-halts-oil-shipments.html : $.posts.*.message
+2012-02-21 22:20:57,540 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/20/1870162/attacks-clashes-increase-on-sudan.html : $.posts.*.message
+2012-02-21 22:20:57,540 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/13/1853200/police-strike-ends-in-rio-de-janeiro.html : $.posts.*.message
+2012-02-21 22:20:57,541 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/12/1850287/arab-league-seeks-joint-un-force.html : $.posts.*.message
+2012-02-21 22:20:57,541 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/12/1845272/israel-and-iran.html : $.posts.*.message
+2012-02-21 22:20:57,541 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/14/1853981/thai-police-report-2-explosions.html : $.posts.*.message
+2012-02-21 22:20:57,542 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/15/1856742/iran-europeans-discuss-sanctions.html : $.posts.*.message
+2012-02-21 22:20:57,542 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/05/1832428/nigeria-oil-line-on-fire-militants.html : $.posts.*.message
+2012-02-21 22:20:57,543 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/07/1836803/israeli-radio-in-farsi-transmits.html : $.posts.*.message
+2012-02-21 22:20:57,543 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/18/1865440/iran-says-stuxnet-virus-infected.html : $.posts.*.message
+2012-02-21 22:20:57,543 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/19/1868326/algerian-state-media-4-killed.html : $.posts.*.message
+2012-02-21 22:20:57,544 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/16/1861747/cranston-votes-not-to-appeal-prayer.html : $.posts.*.message
+2012-02-21 22:20:57,544 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/content/print/front_pdf/1-A-Wed-February-15-12.pdf : $.posts.*.message
+2012-02-21 22:20:57,544 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/20/1870998/rebels-hold-3-peacekeepers-in.html : $.posts.*.message
+2012-02-21 22:20:57,545 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/17/1862348/romney-takes-on-world-as-he-vies.html : $.posts.*.message
+2012-02-21 22:20:57,545 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/17/1863253/with-egypt-in-turmoil-israel-builds.html : $.posts.*.message
+2012-02-21 22:20:57,545 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/17/1862104/thai-police-2-more-suspects-in.html : $.posts.*.message
+2012-02-21 22:20:57,547 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/17/1862392/un-chief-iran-should-open-nuke.html : $.posts.*.message
+2012-02-21 22:20:57,547 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/14/1853942/chinas-next-leader-xi-jinping.html : $.posts.*.message
+2012-02-21 22:20:57,547 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/05/1833671/panama-police-indigenous-clash.html : $.posts.*.message
+2012-02-21 22:20:57,548 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/13/1851547/bombers-target-israeli-diplomats.html : $.posts.*.message
+2012-02-21 22:20:57,548 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/04/1829762/sudan-denies-bombing-civilians.html : $.posts.*.message
+2012-02-21 22:20:57,548 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/19/1868162/witness-rebels-attack-s-mali-town.html : $.posts.*.message
+2012-02-21 22:20:57,549 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/11/1846393/state-rallies-in-iran-mark-1979.html : $.posts.*.message
+2012-02-21 22:20:57,549 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/19/1868143/irans-guard-begins-new-land-military.html : $.posts.*.message
+2012-02-21 22:20:57,550 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/08/1840119/reputed-mobster-the-large-guy.html : $.posts.*.message
+2012-02-21 22:20:57,550 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/21/1872458/big-questions-still-unanswered.html : $.posts.*.message
+2012-02-21 22:20:57,550 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/20/1870999/israelis-fear-homefront-vulnerable.html : $.posts.*.message
+2012-02-21 22:20:57,551 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/15/1857405/oil-prices-climb-as-iran-stops.html : $.posts.*.message
+2012-02-21 22:20:57,551 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/19/1868204_iconic-sudanese-singer-mohammed.html : $.posts.*.message
+2012-02-21 22:20:57,551 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/01/13/1776908/the-days-best-011312.html : $.posts.*.message
+2012-02-21 22:20:57,552 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/14/1855486/us-europe-look-at-fast-but-risky.html : $.posts.*.message
+2012-02-21 22:20:57,552 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/16/1860179/israel-asks-un-to-condemn-attacks.html : $.posts.*.message
+2012-02-21 22:20:57,552 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/18/1864754_400-iran-exiles-reluctantly-move.html : $.posts.*.message
+2012-02-21 22:20:57,565 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/opinion/editorials/ : $.posts.*.message
+2012-02-21 22:20:57,566 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/21/1873830/iran-says-will-strike-its-foes.html : $.posts.*.message
+2012-02-21 22:20:57,566 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/19/1868400/israel-pm-aide-to-resign-over.html : $.posts.*.message
+2012-02-21 22:20:57,566 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/15/1857160/israel-thai-bombs-similar-to-those.html : $.posts.*.message
+2012-02-21 22:20:57,574 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/14/1853988/oil-hovers-below-101-ahead-of.html : $.posts.*.message
+2012-02-21 22:20:57,574 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/05/1832732/israeli-premier-to-visit-us-to.html : $.posts.*.message
+2012-02-21 22:20:57,574 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/19/1868165/pope-leads-new-cardinals-in-mass.html : $.posts.*.message
+2012-02-21 22:20:57,575 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/14/1854627/israeli-relief-delegation-welcomed.html : $.posts.*.message
+2012-02-21 22:20:57,575 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/14/1854530/iraq-born-islamist-cleric-in-norway.html : $.posts.*.message
+2012-02-21 22:20:57,575 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/12/v-print/1845272/israel-and-iran.html : $.posts.*.message
+2012-02-21 22:20:57,576 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/09/1841947/daughter-jailed-tymoshenko-denied.html : $.posts.*.message
+2012-02-21 22:20:57,576 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/21/1871704/fear-mounts-in-israel-of-iranian.html : $.posts.*.message
+2012-02-21 22:20:57,577 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/16/1858659/honduras-prison-fire-is-deadliest.html : $.posts.*.message
+2012-02-21 22:20:57,577 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/10/1845854/us-officials-al-qaida-behind-syria.html : $.posts.*.message
+2012-02-21 22:20:57,578 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/09/1841286/dwindling-time-rising-tension.html : $.posts.*.message
+2012-02-21 22:20:57,578 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/16/1860366_israels-newest-politician-breaks.html : $.posts.*.message
+2012-02-21 22:20:57,578 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/05/1832872/just-a-bluff-fears-grow-of-israeli.html : $.posts.*.message
+2012-02-21 22:20:57,579 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/09/1842695/hamas-drifting-away-from-longtime.html : $.posts.*.message
+2012-02-21 22:20:57,579 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/20/1871131/iraq-officials-violence-drops.html : $.posts.*.message
+2012-02-21 22:20:57,594 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/19/1868167/white-house-national-security.html : $.posts.*.message
+2012-02-21 22:20:57,594 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/16/1860535/iran-seeks-unity-around-memory.html : $.posts.*.message
+2012-02-21 22:20:57,595 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/20/1870165/uk-terror-suspect-alleges-kenya.html : $.posts.*.message
+2012-02-21 22:20:57,595 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/18/1864709/thailand-questions-open-door-after.html : $.posts.*.message
+2012-02-21 22:20:57,595 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/15/1858317_nypd-ups-security-around-israeli.html : $.posts.*.message
+2012-02-21 22:20:57,596 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/21/1873222/new-claims-suggest-sweep-of-irans.html : $.posts.*.message
+2012-02-21 22:20:57,596 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/19/1868166/manila-refrained-from-syria-vote.html : $.posts.*.message
+2012-02-21 22:20:57,597 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/07/1836524/explosion-hits-near-military-base.html : $.posts.*.message
+2012-02-21 22:20:57,597 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/14/1854736/ap-interview-tibetan-exile-warns.html : $.posts.*.message
+2012-02-21 22:20:57,597 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/16/1859871/us-officials-iran-unlikely-to.html : $.posts.*.message
+2012-02-21 22:20:57,598 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/18/1864754/400-iran-exiles-reluctantly-move.html : $.posts.*.message
+2012-02-21 22:20:57,598 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/19/1868323_roadside-bomb-kills-4-civilians.html : $.posts.*.message
+2012-02-21 22:20:57,598 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/21/1872707/israel-to-free-palestinian-hunger.html : $.posts.*.message
+2012-02-21 22:20:57,599 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/05/1834113/indonesias-new-barrier-to-deter.html : $.posts.*.message
+2012-02-21 22:20:57,599 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/10/1844559/israel-successfully-tests-missile.html : $.posts.*.message
+2012-02-21 22:20:57,599 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/16/1859225_israeli-official-iran-embellishing.html : $.posts.*.message
+2012-02-21 22:20:57,600 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/09/1842139/afghan-president-postpones-handover.html : $.posts.*.message
+2012-02-21 22:20:57,618 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/19/1868168/myanmar-state-media-dissident.html : $.posts.*.message
+2012-02-21 22:20:57,619 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/01/26/1808899/attack-on-nato-convoy-kills-4.html : $.posts.*.message
+2012-02-21 22:20:57,619 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/18/1864836/lawyer-of-palestinian-hunger-striker.html : $.posts.*.message
+2012-02-21 22:20:57,619 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/10/1844178/report-woman-killed-in-bomb-blast.html : $.posts.*.message
+2012-02-21 22:20:57,620 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/10/1844144/turkey-and-iran-diverge-over-syria.html : $.posts.*.message
+2012-02-21 22:20:57,620 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/17/1863464/computer-salesman-get-18-months.html : $.posts.*.message
+2012-02-21 22:20:57,621 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/07/1837351/hezbollah-iran-will-not-ask-it.html : $.posts.*.message
+2012-02-21 22:20:57,622 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/16/1859378/8-palestinian-children-die-in.html : $.posts.*.message
+2012-02-21 22:20:57,622 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/15/1859051/us-missile-strike-kills-6-people.html : $.posts.*.message
+2012-02-21 22:20:57,622 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/18/1864837/32-stand-trial-over-irans-biggest.html : $.posts.*.message
+2012-02-21 22:20:57,623 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/18/1865474/gas-prices-are-highest-ever-for.html : $.posts.*.message
+2012-02-21 22:20:57,624 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/15/1858289/israeli-minister-iran-near-point.html : $.posts.*.message
+2012-02-21 22:20:57,624 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/16/1860243/panetta-no-iranian-decision-yet.html : $.posts.*.message
+2012-02-21 22:20:57,625 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/18/1864836_lawyer-of-palestinian-hunger-striker.html : $.posts.*.message
+2012-02-21 22:20:57,625 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/13/1851494/israeli-diplomats-car-in-india.html : $.posts.*.message
+2012-02-21 22:20:57,625 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/13/1851517/bombers-target-israeli-diplomats.html : $.posts.*.message
+2012-02-21 22:20:57,626 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/15/1856257/israel-blames-iran-for-bangkok.html : $.posts.*.message
+2012-02-21 22:20:57,627 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/content/print/front_pdf/1-A-Thu-January-12-12.pdf : $.posts.*.message
+2012-02-21 22:20:57,628 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/21/1873367/nato-3-troops-die-in-afghan-roadside.html : $.posts.*.message
+2012-02-21 22:20:57,628 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/15/1858330/irans-newest-nuclear-advances.html : $.posts.*.message
+2012-02-21 22:20:57,629 ERROR | generalParsers.py : 63 : www.newsobserver.com - Parse Failed http://www.newsobserver.com/2012/02/14/1854799/us-condemns-thailand-blasts-suggests.html : $.posts.*.message
+2012-02-21 22:20:59,562 INFO | googleBlogSearch.py : 63 : MainProcess - www.vancouversun.com
+2012-02-21 22:20:59,562 INFO | googleBlogSearch.py : 64 : MainProcess - 100
+2012-02-21 22:20:59,565 INFO | blogViewer.py : 10 : www.vancouversun.com - http://www.vancouversun.com/news/Israel+blames+Iran+magnetic+bomb+attacks/6144406/story.html Results/Israel+Iran+Bombing/www.vancouversun.com.1.2012
+2012-02-21 22:20:59,567 INFO | helper.py : 56 : www.vancouversun.com - fetching 100
+2012-02-21 22:21:08,254 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/page/2_0335-20120116.html
+2012-02-21 22:21:08,254 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/itp/20120214/us/whatsnews
+2012-02-21 22:21:08,254 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/page/2_0334-20120112.html
+2012-02-21 22:21:08,254 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/itp/20120208/asia/opinion
+2012-02-21 22:21:08,254 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/page/2_0335-20120215.html
+2012-02-21 22:21:08,254 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/page/2_0334-20120113.html
+2012-02-21 22:21:08,255 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/page/2_0334-20120208.html
+2012-02-21 22:21:08,255 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/public/search?article-doc-type=%7BCommentary+(U.S.)%7D&HEADER_TEXT=commentary+(u.s.
+2012-02-21 22:21:08,255 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/documents/print/WSJ_-A013-20120112.pdf
+2012-02-21 22:21:08,255 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/itp
+2012-02-21 22:21:08,255 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/page/2_0334-20120201.html
+2012-02-21 22:21:08,255 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/public/search?article-doc-%7BBest+of+the+Web+Today%7D&HEADER_TEXT=best+of+the+web+today
+2012-02-21 22:21:08,256 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/itp/20120207/us/opinion
+2012-02-21 22:21:08,256 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/documents/print/WSJ_-A001-20120215.pdf
+2012-02-21 22:21:08,256 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/page/2_0335-20120214.html
+2012-02-21 22:21:08,256 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/page/2_0335-20120208.html
+2012-02-21 22:21:08,256 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/page/2_0334-20120215.html
+2012-02-21 22:21:08,256 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/page/2_0333-20120214.html
+2012-02-21 22:21:08,256 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/documents/print/WSJ_-A017-20120124.pdf
+2012-02-21 22:21:08,256 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/page/2_0333-20120215.html
+2012-02-21 22:21:08,257 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/page/2_0334-20120116.html
+2012-02-21 22:21:08,257 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/documents/print/WSJ_-A001-20120214.pdf
+2012-02-21 22:21:08,257 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/page/2_0333-20120207.html
+2012-02-21 22:21:08,257 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/documents/print/WSJ_-A001-20120106.pdf
+2012-02-21 22:21:08,257 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/itp/20120112/us/whatsnews
+2012-02-21 22:21:08,257 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/itp/20120113/europe/opinion
+2012-02-21 22:21:08,257 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/page/2_0333-20120112.html
+2012-02-21 22:21:08,258 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/documents/print/WSJ_-A001-20120112.pdf
+2012-02-21 22:21:08,258 ERROR | generalParsers.py : 34 : online.wsj.com - Renaming Failed 'NoneType' object has no attribute 'group': http://online.wsj.com/public/search?article-doc-type=%7BGlobal+View%7D&HEADER_TEXT=global+view
+2012-02-21 22:21:08,259 INFO | helper.py : 56 : online.wsj.com - fetching 70

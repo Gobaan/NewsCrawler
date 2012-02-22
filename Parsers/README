@@ -1,0 +1,6 @@
+This crawler is designed to crawl news articles. There are two seperate crawlers depending on whether you want to use the Bing API or the less legit Google result parser.
+
+  python googleBlogSearch.py [query start_month start_year end_month end_year]
+
+
+Remember to pip install BeautifulSoup and any other outstanding packages.
