@@ -2,5 +2,8 @@ This crawler is designed to crawl news articles. There are two seperate crawlers
 
   python googleBlogSearch.py [query start_month start_year end_month end_year]
 
+The extra fields are due to google offering finer control over the query
 
-Remember to pip install BeautifulSoup and any other outstanding packages.
+Dependencies:
+   BeautifulSoup
+   pycurl

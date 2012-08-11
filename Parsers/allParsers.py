@@ -5,21 +5,25 @@ import allCommentExtractors
 import allArticleExtractors
 
 Result = collections.namedtuple('Result', ['content', 'comments'])
-def parse(articles, extractContentFunction, extractCommentFunction):
-  data = helper.parallel_fetch(articles)
-  content = extractContentFunction(data)
-  comments = extractCommentFunction(data)
-  return Result(content, comments)
+class CompleteParser(object):
+  def __init__(self, contentExtractor, commentExtractor):
+    self.contentExtractor = contentExtractor
+    self.commentExtractor = commentExtractor
+
+  def parse_all(self, articles):
+    data = helper.parallel_fetch(articles)
+    content = self.contentExtractor.parse_all(data)
+    comments = self.commentExtractor.parse_all(data)
+    results = {}
+    for url in content:
+      results[url] = Result(content[url], comments[url])
+    return results
 
 mapper = {}
-# Takes all the extract content functions and creates parsers from them
-# Simple rename function for now
+# merges content and comment parsers
 for name in dir(allCommentExtractors):
   cls = getattr(allCommentExtractors, name)
 
   if isinstance(cls, generalParsers.Parser) and cls.site:
-    articleParser = getattr(allArticleExtractors, name).parse_all
-    mapper[cls.site] = \
-      functools.partial(parse, 
-          extractContentFunction = articleParser,
-          extractCommentFunction = cls.parse_all)
+    articleParser = getattr(allArticleExtractors, name)
+    mapper[cls.site] = CompleteParser(articleParser, cls)

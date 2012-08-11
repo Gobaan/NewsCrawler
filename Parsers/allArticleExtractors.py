@@ -2,295 +2,279 @@ from BeautifulSoup import SoupStrainer
 from generalParsers import *
 import types
 
-abcnews_go = HtmlParser()
-abcnews_go.strainer = SoupStrainer('div', {u'id': u'post-\d+'})
-abcnews_go.tags = 'p'
-abcnews_go.attrs = {}
+abcnews_go = HtmlParser(
+  strainer = SoupStrainer('div', {u'id': u'post-\d+'}),
+  targets = SoupStrainer('p', {})
+)
 
-aptn = HtmlParser()
-aptn.strainer = SoupStrainer('div', {u'class': u'entry'})
-aptn.tags = 'p'
-aptn.attrs = {}
+aptn = HtmlParser(
+  strainer = SoupStrainer('div', {u'class': u'entry'}),
+  targets = SoupStrainer('p', {})
+)
 
-breitbart = HtmlParser()
-breitbart.strainer = SoupStrainer('span', {u'class': re.compile('lingo_region')})
-breitbart.tags = 'p'
-breitbart.attrs = {}
+breitbart = HtmlParser(
+  strainer = SoupStrainer('span', {u'class': re.compile('lingo_region')}),
+  targets = SoupStrainer('p', {})
+)
 
-businessinsider = HtmlParser()
-businessinsider.attrs = {}
-businessinsider.strainer = SoupStrainer('div', {u'class': u'post-content'})
-businessinsider.tags = 'p'
+businessinsider = HtmlParser(
+  strainer = SoupStrainer('div', {u'class': u'post-content'}),
+  targets = SoupStrainer('p', {}),
+)
 
-cnews_canoe = HtmlParser()
-cnews_canoe.strainer = SoupStrainer('table')
-cnews_canoe.tags = 'p'
-cnews_canoe.attrs = {}
+cnews_canoe = HtmlParser(
+  strainer = SoupStrainer('table'),
+  targets = SoupStrainer('p', {})
+)
 
-csmonitor = HtmlParser()
-csmonitor.strainer = SoupStrainer('div', {'class':'sBody'})
-csmonitor.tags = 'p'
-csmonitor.attrs = {}
+csmonitor = HtmlParser(
+  strainer = SoupStrainer('div', {'class':'sBody'}),
+  targets = SoupStrainer('p', {})
+)
 
-usatoday = HtmlParser()
-usatoday.strainer = SoupStrainer('div', {'id':'post-body'})
-usatoday.tags = 'p'
-usatoday.attrs = {}
+usatoday = HtmlParser(
+  strainer = SoupStrainer('div', {'id':'post-body'}),
+  targets = SoupStrainer('p', {})
+)
 
-foxnews = HtmlParser()
-foxnews.strainer = SoupStrainer('div', {u'class': u'entry-content  KonaBody'})
-foxnews.tags = 'p'
-foxnews.attrs = {}
+foxnews = HtmlParser(
+  strainer = SoupStrainer('div', {u'class': u'entry-content  KonaBody'}),
+  targets = SoupStrainer('p', {})
+)
 
-fullcomment_nationalpost = HtmlParser()
-fullcomment_nationalpost.strainer = SoupStrainer('div', {u'class': u'npBlock npPostContent'})
-fullcomment_nationalpost.tags = 'p'
-fullcomment_nationalpost.attrs = {}
+fullcomment_nationalpost = HtmlParser(
+  strainer = SoupStrainer('div', {u'class': u'npBlock npPostContent'}),
+  targets = SoupStrainer('p', {})
+)
 
-guardian = HtmlParser()
-guardian.strainer = SoupStrainer('div', {'id':'article-body-blocks'})
-guardian.tags = 'p'
-guardian.attrs = {}
+guardian = HtmlParser(
+  strainer = SoupStrainer('div', {'id':'article-body-blocks'}),
+  targets = SoupStrainer('p', {})
+)
 
-news_cnet = HtmlParser()
-news_cnet.strainer = SoupStrainer('div', {u'section': u'txt', u'class': u'postBody txtWrap'})
-news_cnet.tags = 'p'
-news_cnet.attrs = {}
+news_cnet = HtmlParser(
+  strainer = SoupStrainer('div', {u'section': u'txt', u'class': u'postBody txtWrap'}),
+  targets = SoupStrainer('p', {})
+)
 
-news_yahoo = HtmlParser()
-news_yahoo.strainer = SoupStrainer('div', {u'class': u'.*yom-art-content.*'})
-news_yahoo.tags = 'div'
-news_yahoo.attrs = {u'class': u'bd'}
+news_yahoo = HtmlParser(
+  strainer = SoupStrainer('div', {u'class': u'.*yom-art-content.*'}),
+  targets = SoupStrainer('div', {u'class': u'bd'})
+)
 
-online_wsj = HtmlParser()
-online_wsj.strainer = SoupStrainer('div', {'class':re.compile('article.*')})
-online_wsj.tags = 'p'
-online_wsj.attrs = {}
+online_wsj = HtmlParser(
+  strainer = SoupStrainer('div', {'class':re.compile('article.*')}),
+  targets = SoupStrainer('p', {})
+)
 
-opinion_financialpost = HtmlParser()
-opinion_financialpost.strainer = SoupStrainer('div', {u'class': u'npBlock npPostContent'})
-opinion_financialpost.tags = 'p'
-opinion_financialpost.attrs = {}
+opinion_financialpost = HtmlParser(
+  strainer = SoupStrainer('div', {u'class': u'npBlock npPostContent'}),
+  targets = SoupStrainer('p', {})
+)
 
-rawstory = HtmlParser()
-rawstory.strainer = SoupStrainer('div', {u'id': re.compile(u'post-.*')})
-rawstory.tags = 'p'
-rawstory.attrs = {}
+rawstory = HtmlParser(
+  strainer = SoupStrainer('div', {u'id': re.compile(u'post-.*')}),
+  targets = SoupStrainer('p', {})
+)
 
-community_seattletimes_nwsource = HtmlParser()
-community_seattletimes_nwsource.strainer = SoupStrainer('div', {u'class': u'body'})
-community_seattletimes_nwsource.tags = 'p'
-community_seattletimes_nwsource.attrs = {}
+community_seattletimes_nwsource = HtmlParser(
+  strainer = SoupStrainer('div', {u'class': u'body'}),
+  targets = SoupStrainer('p', {})
+)
 
-talkingpointsmemo = HtmlParser()
-talkingpointsmemo.strainer = SoupStrainer('body', {u'blogtag': u'general'})
-talkingpointsmemo.tags = 'p'
-talkingpointsmemo.attrs = {}
+talkingpointsmemo = HtmlParser(
+  strainer = SoupStrainer('body', {u'blogtag': u'general'}),
+  targets = SoupStrainer('p', {})
+)
 
-thehill = HtmlParser()
-thehill.strainer = SoupStrainer('div', {u'class': u'txt', u'id': u'el-article-div'})
-thehill.tags = 'p'
-thehill.attrs = {}
+thehill = HtmlParser(
+  strainer = SoupStrainer('div', {u'class': u'txt', u'id': u'el-article-div'}),
+  targets = SoupStrainer('p', {})
+)
 
-thestar = HtmlParser()
-thestar.strainer = SoupStrainer('div', {u'id': u'dataTabarticle', u'class': u'ts-article'})
-thestar.tags = 'p'
-thestar.attrs = {'class':None}
+thestar = HtmlParser(
+  strainer = SoupStrainer('div', {u'id': u'dataTabarticle', u'class': u'ts-article'}),
+  targets = SoupStrainer('p', {'class':None})
+)
 
-washingtonpost = HtmlParser()
-washingtonpost.strainer = SoupStrainer('div', {u'id': u'article_body'})
-washingtonpost.tags = 'p'
-washingtonpost.attrs = {}
+washingtonpost = HtmlParser(
+  strainer = SoupStrainer('div', {u'id': u'article_body'}),
+  targets = SoupStrainer('p', {})
+)
 
-def check_any_attr(text):
-  def check_attrs(name, attrs):
-    return name == 'div' and text in [attr[1] for attr in attrs]
-  return check_attrs
+voices_washingtonpost = HtmlParser(
+  strainer = SoupStrainer(check_any_attr('entrytext')),
+  targets = SoupStrainer('p', {})
+)
 
-voices_washingtonpost = HtmlParser()
-voices_washingtonpost.strainer = SoupStrainer(check_any_attr('entrytext'))
-voices_washingtonpost.tags = 'p'
-voices_washingtonpost.attrs = {}
+americanthinker = HtmlParser(
+  strainer = SoupStrainer('div', {u'class': u'article_body'}),
+  targets = SoupStrainer('span', {})
+)
 
-americanthinker = HtmlParser()
-americanthinker.strainer = SoupStrainer('div', {u'class': u'article_body'})
-americanthinker.tags = 'span'
-americanthinker.attrs = {}
+calgaryherald = HtmlParser(
+  strainer = SoupStrainer('div', {u'id': u'story_content'}),
+  targets = SoupStrainer('p', {})
+)
 
-calgaryherald = HtmlParser()
-calgaryherald.strainer = SoupStrainer('div', {u'id': u'story_content'})
-calgaryherald.tags = 'p'
-calgaryherald.attrs = {}
+canadianbusiness = HtmlParser(
+  strainer = SoupStrainer('div', {u'class': u'articleText description'}),
+  targets = SoupStrainer('p', {})
+)
 
-canadianbusiness = HtmlParser()
-canadianbusiness.strainer = SoupStrainer('div', {u'class': u'articleText description'})
-canadianbusiness.tags = 'p'
-canadianbusiness.attrs = {}
+cbc = HtmlParser(
+  strainer = SoupStrainer('div', {u'aria-labelledby': u'storyhead', u'role': u'main', u'id': u'storybody'}),
+  targets = SoupStrainer('p', {})
+)
 
-cbc = HtmlParser()
-cbc.strainer = SoupStrainer('div', {u'aria-labelledby': u'storyhead', u'role': u'main', u'id': u'storybody'})
-cbc.tags = 'p'
-cbc.attrs = {}
+cbsnews = HtmlParser(
+  strainer = SoupStrainer('div', {'class':re.compile('postBody|storyText')}),
+  targets = SoupStrainer('div', {'class':re.compile('postBody|storyText')})
+)
 
-cbsnews = HtmlParser()
-cbsnews.strainer = SoupStrainer('div', {'class':re.compile('postBody|storyText')})
-cbsnews.tags = 'div'
-cbsnews.attrs = {'class':re.compile('postBody|storyText')}
+discussions_chicagotribune = HtmlParser(
+  strainer = SoupStrainer('div', {u'id': u'story-body-text'}),
+  targets = SoupStrainer('div', {u'id': u'story-body-text'})
+)
 
-discussions_chicagotribune = HtmlParser()
-discussions_chicagotribune.strainer = SoupStrainer('div', {u'id': u'story-body-text'})
-discussions_chicagotribune.tags = 'div'
-discussions_chicagotribune.attrs = {u'id': u'story-body-text'}
+cnn = HtmlParser(
+  strainer = SoupStrainer('div', {u'class': u'cnn_strycntntlft'}),
+  targets = SoupStrainer('p', {})
+)
 
-cnn = HtmlParser()
-cnn.strainer = SoupStrainer('div', {u'class': u'cnn_strycntntlft'})
-cnn.tags = 'p'
-cnn.attrs = {}
+ctv = HtmlParser(
+  strainer = SoupStrainer('div', {u'class': u'mainBody'}),
+  targets = SoupStrainer('p', {})
+)
 
-ctv = HtmlParser()
-ctv.strainer = SoupStrainer('div', {u'class': u'mainBody'})
-ctv.tags = 'p'
-ctv.attrs = {}
+economist = HtmlParser(
+  strainer = SoupStrainer('div', {u'class': u'ec-blog-body'}),
+  targets = SoupStrainer('p', {})
+)
 
-economist = HtmlParser()
-economist.strainer = SoupStrainer('div', {u'class': u'ec-blog-body'})
-economist.tags = 'p'
-economist.attrs = {}
+edmontonjournal = HtmlParser(
+  strainer = SoupStrainer('div', {u'id': 'story_content'}),
+  targets = SoupStrainer('p', {})
+)
 
-edmontonjournal = HtmlParser()
-edmontonjournal.strainer = SoupStrainer('div', {u'id': 'story_content'})
-edmontonjournal.tags = 'p'
-edmontonjournal.attrs = {}
+huffingtonpost = HtmlParser(
+  strainer = SoupStrainer('div', {u'class': u'entry_body_text'}),
+  targets = SoupStrainer('p', {})
+)
 
-huffingtonpost = HtmlParser()
-huffingtonpost.strainer = SoupStrainer('div', {u'class': u'entry_body_text'})
-huffingtonpost.tags = 'p'
-huffingtonpost.attrs = {}
+discussions_latimes = HtmlParser(
+  strainer = SoupStrainer('div', {u'id': u'story-body-text'}),
+  targets = SoupStrainer('div', {u'id': u'story-body-text'})
+)
 
-discussions_latimes = HtmlParser()
-discussions_latimes.strainer = SoupStrainer('div', {u'id': u'story-body-text'})
-discussions_latimes.tags = 'div'
-discussions_latimes.attrs = {u'id': u'story-body-text'}
+newsobserver = HtmlParser(
+  strainer = SoupStrainer('div', {u'id': u'story_body'}),
+  targets = SoupStrainer('p', {})
+)
 
-newsobserver = HtmlParser()
-newsobserver.strainer = SoupStrainer('div', {u'id': u'story_body'})
-newsobserver.tags = 'p'
-newsobserver.attrs = {}
+newsvine = HtmlParser(
+  strainer = SoupStrainer('div', {u'class': u'articleText'}),
+  targets = SoupStrainer('p', {})
+)
 
-newsvine = HtmlParser()
-newsvine.strainer = SoupStrainer('div', {u'class': u'articleText'})
-newsvine.tags = 'p'
-newsvine.attrs = {}
+npr = HtmlParser(
+  strainer = SoupStrainer('div', {u'id': u'storybody'}),
+  targets = SoupStrainer('p', {'class' : None})
+)
 
-npr = HtmlParser()
-npr.strainer = SoupStrainer('div', {u'id': u'storybody'})
-npr.tags = 'p'
-npr.attrs = {'class' : None}
+community_nytimes = HtmlParser(
+  strainer = SoupStrainer('div', {'class': re.compile(u'articleBody|nytint-post')}),
+  targets = SoupStrainer('p', {})
+)
 
-community_nytimes = HtmlParser()
-community_nytimes.strainer = SoupStrainer('div', {'class': re.compile(u'articleBody|nytint-post')})
-community_nytimes.tags = 'p'
-community_nytimes.attrs = {}
+politico = HtmlParser(
+  strainer = SoupStrainer('div', {u'class': u'story-text resize'}),
+  targets = SoupStrainer('p', {})
+)
 
-politico = HtmlParser()
-politico.strainer = SoupStrainer('div', {u'class': u'story-text resize'})
-politico.tags = 'p'
-politico.attrs = {}
-
-politico_blog = HtmlParser()
-politico_blog.strainer = SoupStrainer('div', {u'class': re.compile('entry-content')})
-politico_blog.tags = 'p'
-politico_blog.attrs = {}
-
+politico_blog = HtmlParser(
+  strainer = SoupStrainer('div', {u'class': re.compile('entry-content')}),
+  targets = SoupStrainer('p', {})
+)
 
 # Note gets comments right now
-reuters = HtmlParser()
-reuters.strainer = SoupStrainer('span', {u'id': re.compile(u'articleText')})
-reuters.tags = 'p'
-reuters.attrs = {}
 
-sfgate = HtmlParser()
-sfgate.strainer = SoupStrainer('div', {u'id': re.compile(u'bodytext_')})
-sfgate.tags = 'p'
-sfgate.attrs = {'class':None}
+reuters = HtmlParser(
+  strainer = SoupStrainer('span', {u'id': re.compile(u'articleText')}),
+  targets = SoupStrainer('p', {})
+)
 
-straight = HtmlParser()
-straight.strainer = SoupStrainer('div', {u'id': u'article_body'})
-straight.tags = 'p'
-straight.attrs = {}
+sfgate = HtmlParser(
+  strainer = SoupStrainer('div', {u'id': re.compile(u'bodytext_')}),
+  targets = SoupStrainer('p', {'class':None})
+)
 
-terracestandard = HtmlParser()
-terracestandard.strainer = SoupStrainer('div', {u'id': u'story'})
-terracestandard.tags = 'p'
-terracestandard.attrs = {}
+straight = HtmlParser(
+  strainer = SoupStrainer('div', {u'id': u'article_body'}),
+  targets = SoupStrainer('p', {})
+)
 
-theatlantic = HtmlParser()
-theatlantic.strainer = SoupStrainer('div', {u'class': u'articleContent'})
-theatlantic.tags = 'div'
-theatlantic.attrs = {u'class': u'articleContent'}
+terracestandard = HtmlParser(
+  strainer = SoupStrainer('div', {u'id': u'story'}),
+  targets = SoupStrainer('p', {})
+)
 
-theglobeandmail = HtmlParser()
-theglobeandmail.strainer = SoupStrainer('div', {u'class': re.compile(u'articlecopy')})
-theglobeandmail.tags = 'p'
-theglobeandmail.attrs = {}
+theatlantic = HtmlParser(
+  strainer = SoupStrainer('div', {u'class': u'articleContent'}),
+  targets = SoupStrainer('div', {u'class': u'articleContent'})
+)
 
-thesudburystar = HtmlParser()
-thesudburystar.strainer = SoupStrainer('div', {u'id': u'ctl00_ContentPlaceHolder1_pMainContent'})
-thesudburystar.tags = 'p'
-thesudburystar.attrs = {}
+theglobeandmail = HtmlParser(
+  strainer = SoupStrainer('div', {u'class': re.compile(u'articlecopy')}),
+  targets = SoupStrainer('p', {})
+)
+
+thesudburystar = HtmlParser(
+  strainer = SoupStrainer('div', {u'id': u'ctl00_ContentPlaceHolder1_pMainContent'}),
+  targets = SoupStrainer('p', {})
+)
 
 # Currently gets comments
-thisislondon_co = HtmlParser()
-thisislondon_co.strainer = SoupStrainer('div', {u'id': u'article'})
-thisislondon_co.tags = 'p'
-thisislondon_co.attrs = {}
 
-timescolonist = HtmlParser()
-timescolonist.strainer = SoupStrainer('div', {u'id': re.compile(u'page.*')})
-timescolonist.tags = 'p'
-timescolonist.attrs = {}
+thisislondon_co = HtmlParser(
+  strainer = SoupStrainer('div', {u'id': u'article'}),
+  targets = SoupStrainer('p', {})
+)
 
-upi = HtmlParser()
-upi.strainer = SoupStrainer('p', {})
-upi.tags = 'p'
-upi.attrs = {}
+timescolonist = HtmlParser(
+  strainer = SoupStrainer('div', {u'id': re.compile(u'page.*')}),
+  targets = SoupStrainer('p', {})
+)
 
-vancouversun = HtmlParser()
-vancouversun.strainer = SoupStrainer('div', {u'id':'story_content'})
-vancouversun.tags = 'p'
-vancouversun.attrs = {}
+upi = HtmlParser(
+  strainer = SoupStrainer('p', {}),
+  targets = SoupStrainer('p', {})
+)
 
-voices_yahoo = HtmlParser()
-voices_yahoo.strainer = SoupStrainer('div', {u'id': 'article_text_blocks'})
-voices_yahoo.tags = 'div'
-voices_yahoo.attrs = {u'id': 'article_text_blocks'}
+vancouversun = HtmlParser(
+  strainer = SoupStrainer('div', {u'id':'story_content'}),
+  targets = SoupStrainer('p', {})
+)
 
-winnipegsun = HtmlParser()
-winnipegsun.strainer = SoupStrainer('div', {u'class': re.compile('content')})
-winnipegsun.tags = 'p'
-winnipegsun.attrs = {'class':None}
+voices_yahoo = HtmlParser(
+  strainer = SoupStrainer('div', {u'id': 'article_text_blocks'}),
+  targets = SoupStrainer('div', {u'id': 'article_text_blocks'})
+)
+
+winnipegsun = HtmlParser(
+  strainer = SoupStrainer('div', {u'class': re.compile('content')}),
+  targets = SoupStrainer('p', {'class':None})
+)
 
 # iterative parser again
-washingtonpost_iterative = IterativeParser()
-washingtonpost_iterative.site = 'washingtonpost.com'
-def washingtonpost_parse_all(self, url_site):
-  blog_urls = {url:site for url, site in url_site.iteritems() 
-    if url.startswith('http://voices.washingtonpost.com')}
-  rest_urls = {url:site for url, site in url_site.iteritems() if url not in blog_urls}
-  self.url_data = voices_washingtonpost.parse_all(blog_urls)
-  self.url_data.update(washingtonpost.parse_all(rest_urls))
-  return self.url_data
+washingtonpost_iterative = IterativeParser(
+  dispatchers = [(lambda url: url.startswith('http://voices.washingtonpost.com'), voices_washingtonpost),
+                 (lambda url: True, washingtonpost),
+                ]
+)
 
-washingtonpost_iterative.parse_all = \
-  types.MethodType (washingtonpost_parse_all, washingtonpost_iterative)
-
-politico_iterative = IterativeParser()
-def politico_parse_all(self, url_site):
-  blog_urls = {url:site for url, site in url_site.iteritems() if '/blogs/' in url_site}
-  rest_urls = {url:site for url, site in url_site.iteritems() if url not in blog_urls}
-  self.url_data = politico_blog.parse_all(blog_urls)
-  self.url_data.update(politico.parse_all(rest_urls))
-  return self.url_data
-
-politico_iterative.parse_all = \
-  types.MethodType (politico_parse_all, politico_iterative)
+politico_iterative = IterativeParser(
+  dispatchers = [(lambda url: '/blogs/' in url, politico_blog),
+                 (lambda url: True, politico),
+                ],
+)

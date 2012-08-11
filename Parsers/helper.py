@@ -6,10 +6,10 @@ import urlparse
 import logging
 FORMAT = "%(asctime)-15s %(levelname)s | %(filename)s : %(lineno)d : %(processName)s - %(message)s"
 DATE_FORMAT = '%m/%d %H:%M:%S'
-logging.basicConfig(level=logging.DEBUG, format=FORMAT, datefmt=DATE_FORMAT)
+logging.basicConfig(level=logging.INFO, format=FORMAT, datefmt=DATE_FORMAT)
 logger = logging.getLogger('parsers')
 fh = logging.FileHandler('parsers.log')
-fh.setLevel(logging.DEBUG)
+fh.setLevel(logging.INFO)
 fh.setFormatter(logging.Formatter(FORMAT))
 logger.addHandler(fh)
 
