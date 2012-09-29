@@ -1,0 +1,8 @@
+# Compiled Sources
+*.pyc
+
+# Directories
+cache/
+results/
+
+# log files
