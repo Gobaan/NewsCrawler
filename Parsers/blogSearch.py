@@ -26,12 +26,16 @@ def get_urls(result_page, site):
 
   return urls
 
-def blogSearch(searchTerm, start_year, start_month = 1, increment = 2):
+def blogSearch(searchTerm, start_year, start_month = 1, increment = 3):
+    start_year = int(start_year)
+    start_month = int(start_month)
+    increment = int(increment) - 1
+    searchTerm = searchTerm.replace(' ', '+')
+    print searchTerm
     curlLock = multiprocessing.Lock()
     helper.set_lock(curlLock)
 
     sitelist = allParsers.mapper.keys()
-    sitelist = [site for site in sitelist if 'cnn.com' in site]
     if not os.path.isdir('Results'):
       os.mkdir('Results')
     directory = 'Results/' + searchTerm 
@@ -111,4 +115,4 @@ def blogSearch(searchTerm, start_year, start_month = 1, increment = 2):
 
 
 if __name__ == '__main__' and len(sys.argv) > 1:
-  blogSearch(sys.argv[1:])
+  blogSearch(*sys.argv[1:])
