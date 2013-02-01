@@ -49,7 +49,6 @@ class Searcher(object):
     helper.set_lock(self.curlLock)
                                                                   
     self.sitelist = allParsers.mapper.keys()
-    self.sitelist = ['www.nytimes.com']
     if not os.path.isdir('Results'):
       os.mkdir('Results')
     self.directory = 'Results/' + searchTerm 
@@ -125,6 +124,7 @@ class Searcher(object):
     return params
 
   def search_event(self, year, month, day):
+    year, month, day = int(year), int(month), int(day)
     today = datetime.date.today()
     start_day = datetime.date(year, month, day)
     params = self.make_params(start_day, start_day)
@@ -160,6 +160,7 @@ class Searcher(object):
     logger.info("done %s", self.searchTerm)
 
   def search_year(self, start_year, start_month = 1, increment = 2):
+    start_year, start_month, = int(start_year), int(start_month)
     for month in xrange(start_month, 12, increment + 1):
        today = datetime.date.today()
        start_day = datetime.date(start_year, month, 1)
@@ -307,7 +308,7 @@ if __name__ == '__main__':
   
     for query in queries:
       searcher = Searcher(query[0])
-      searcher.search_event(query[1])
+      searcher.search_year(query[1])
 
     queries = (('climate+change', (2012, 10, 24)),
                ('gun+control', (2012, 12, 14)),
