@@ -5,6 +5,8 @@ import allCommentExtractors
 import allArticleExtractors
 
 Result = collections.namedtuple('Result', ['content', 'comment_url', 'comments'])
+
+error_comment = generalParsers.Comment("", "", "Comment Missing")
 class CompleteParser(object):
   def __init__(self, contentExtractor, commentExtractor):
     self.contentExtractor = contentExtractor
@@ -18,7 +20,7 @@ class CompleteParser(object):
     for url in content:
       result_content = content[url]
       comment_url = "Error Url Not Found"
-      result_comments = ["Comments Missing"]
+      result_comments = [error_comment]
       try:
         comment_url = self.commentExtractor.url_next[url] 
         result_comments = comments[url] 
