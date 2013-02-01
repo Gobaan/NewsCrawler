@@ -178,7 +178,9 @@ class Searcher(object):
 
 if __name__ == '__main__':
   if len(sys.argv) > 1:
-    blogSearch(sys.argv[1:])
+    query =  sys.argv[1:]
+    searcher = Searcher(query[0])
+    searcher.search_event(*query[1:])
   else:
     queries = (\
                #['Northern+Gateway+pipeline', 2011],
