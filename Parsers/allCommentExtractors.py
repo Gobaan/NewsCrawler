@@ -12,17 +12,45 @@ talkingpointsmemo = JSONParser(
   site = 'talkingpointsmemo.com',
 )
 
-def abcnews_go_postprocess(self, comment_list):
+def abcnews_blog_go_postprocess(self, comment_list):
   for comment in comment_list:
     text = comment.text
     text = text[:text.find('Posted by')]
     comment.text = text.strip()
   return comment_list
-abcnews_go = HtmlParser(
+
+abcnews_blog_go = HtmlParser(
   strainer = SoupStrainer('div', {u'class': u'commentlist'}),
-  site = 'abcnews.go.com',
-  postprocess = abcnews_go_postprocess,
+  postprocess = abcnews_blog_go_postprocess,
   targets = SoupStrainer('div', {u'id': re.compile(u'div-comment-\d+')}),
+)
+
+def abcnews_go_rename(self, url, site):
+  Parser.rename(self, url, site)
+  parsed_url = urlparse.urlparse(url)
+  id = urlparse.parse_qs(parsed_url.query)['id'][0]
+  theme = parsed_url.path.split('/')[1]
+  args = {}
+  title_regex = re.compile('<h1 class="headline">(?P<param2>.+)</h1>')
+  args['param0'] = theme
+  args['param1'] = id
+  args['param2'] = urllib.quote_plus(title_regex.search(site).group('param2'))
+  return Template(Template(self.template).safe_substitute(args))
+
+abcnews_go_alternate = EscapedHtmlParser(
+  strainer = SoupStrainer('div', {u'class': u'ptcWidgetDiv'}),
+  targets = SoupStrainer('div', {u'class': u'ptcMessageText'}),
+  starting = '  var',
+  rename = abcnews_go_rename,
+  template = "http://forums.abcnews.go.com/n/pfx/forum.aspx?args=count%3a25%3bcontentUrl%3a%2f$param0%2f%2fstory%3fstoryId%$param1subject%3a$param2%3bconfig%3atalkback%3bmemberlinkType%3aexternal%3bmaxTsn%3a65%3bTOS%3ay%3bargs%3acontentId%3a$param1%3bmemberlinkUrl%3acomments%3ftype%3duser%26loginCode%3d%7bud%3a%40fromUserId%2cloginCode%7d%3bsubmitButtonImage%3asubmit_comment%3bleaveHTML%3ay%3bwidgetId%3aPTWidget0%3btemplate%3aAWTalkback%3bnav%3ajsscontent%3bcontentId%3a$param1%3baddComment%3an%3bwebtag%3aabccomments%3btemplate%3aAWTalkback%3bpage%3a$iteration&nav=jsscontent&widgetId=PTWidget0&type=talkback&webtag=abccomments",
+  max_iterations = 10,
+)
+
+# iterative parser again
+abcnews_go = IterativeParser(
+  site = "abcnews.go.com",
+  dispatchers = [ (lambda url: url.startswith('http://abcnews.go.com/blogs/'),
+  abcnews_blog_go), (lambda url: True, abcnews_go_alternate), ],
 )
 
 def americanthinker_rename(self, url, site):
@@ -128,6 +156,7 @@ csmonitor = JSONParser(
 def discussions_chicagotribune_rename(self, url, site):
   title = self.regex.search(url).group('title')
   return Template(self.template.substitute({'title':title}))
+
 def discussions_chicagotribune_postprocess(self, comment_list):
   for comment in comment_list:
     text = comment.text
@@ -715,4 +744,29 @@ canadianbusiness = JSONParser(
   rename = canadianbusiness_rename,
   template = Template('http://www.canadianbusiness.com/toplets/commenting/data/listcomments.aspx?assetid=$assetid&sortby=recent&pagesize=10'),
   max_iterations = 25,
+)
+
+def arstechnica_rename(self, url, site):
+  path = urlparse.urlparse(url).path
+  if path.endswith('.ars'): path = path[:-4]
+  args = {'url' : path,
+          'encoded_url' : urllib.quote(path, '')}
+  return Template(self.template.safe_substitute(args))
+
+def arstechnica_getNextUrls(self, iteration):
+  next_urls = {}
+  for url in self.found:
+    args = {}
+    args['iteration'] = iteration * 40 - 39
+    next_urls[url] = self.url_template[url].safe_substitute(args)
+  return next_urls
+
+arstechnica = HtmlParser (
+  strainer = SoupStrainer('ol', {u'data-forum-id': re.compile('\d+'), u'id': u'comments', u'data-topic-id': re.compile('\d+')}),
+  targets = SoupStrainer('div', {u'class': u'body'}),
+  template = Template("http://arstechnica.com$url?comments=1&start=$iteration#comments-bar"),
+  site = "arstechnica.com",
+  rename = arstechnica_rename,
+  getNextUrls = arstechnica_getNextUrls,
+  max_iterations = 10,
 )

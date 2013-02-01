@@ -1,15 +1,8 @@
-This crawler is designed to crawl news articles. Fetching articles for a given year is easy as typing
+This crawler is designed to crawl news articles. There are two seperate crawlers depending on whether you want to use the Bing API or the less legit Google result parser.
 
-  python blogSearch.py query start_year [start_month] [window size]
+  python googleBlogSearch.py [query start_month start_year end_month end_year]
 
-for example
-  python blogSearch.py "Northern Gateway Pipeline" 2012 01 3
-
-fetches all articles about the northern gateway pipeline in 2012, starting from January with 3 month rolling windows.
-
-start_month and window_size are optional parameters that default to 01 and 3 respectively.
-
-The output is organized in the results directory. also a cache of websearches is kept and may need to be manually deleted due to space restrictions.
+The extra fields are due to google offering finer control over the query
 
 Dependencies:
    BeautifulSoup

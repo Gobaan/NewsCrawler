@@ -1,9 +1,8 @@
-# Compiled Sources
+*.swp
 *.pyc
 
-# Directories
 cache/
-results/
+debug/
+Results/
 
-# log files
-parsers.log
+*.log

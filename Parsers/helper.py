@@ -31,26 +31,32 @@ def process_wrapper (url, outputs):
     outputs[url] += [buf]
   return store
 
-def parallel_fetch(urls, cache=True, clear=False):
+def parallel_fetch(urls, cache=True, clear=True, replace_redirects = False):
   """ 
   Given a set of URLs fetches all of them in parallel and returns
   all the responses at once. We cannot process them in parallel
   because the data is returned as a partial buffer
   """
-
   for url in urls:
     path = 'cache/%s.cache' % hash(url)
     if clear and not 'google.com' in url and os.path.isfile(path):
       os.remove(path)
 
-
   responses = {}
-  for url in urls:
-    if not cache or not os.path.isfile('cache/%s.cache' % hash(url)):
-      continue
-    with open('cache/%s.cache' % hash(url), 'rb') as cache_file:
-      responses[url] = cache_file.read()
-  
+  if cache:
+    for url in urls:
+      if os.path.isfile('cache/%s.cache' % hash(url)):
+        with open('cache/%s.cache' % hash(url), 'rb') as cache_file:
+          responses[url] = cache_file.read()
+
+    redirected = [responses[url][10:] for url in responses 
+      if responses[url].startswith('REDIRECT:')]
+    urls += redirected
+    for url in redirected:
+      if os.path.isfile('cache/%s.cache' % hash(url)):
+        with open('cache/%s.cache' % hash(url), 'rb') as cache_file:
+          responses[url] = cache_file.read()
+
   m = pycurl.CurlMulti()
   urls = set(urls) - set(responses)
   logger.info('fetching %s', len(urls))
@@ -89,6 +95,11 @@ def parallel_fetch(urls, cache=True, clear=False):
       num_q, ok_list, err_list = m.info_read()
       for c in ok_list:
         m.remove_handle(c)
+        # Store fetched url under final url
+        redirect = c.getinfo(pycurl.EFFECTIVE_URL)
+        if not replace_redirects and redirect != c.link:
+          responses[redirect] = responses[c.link]
+          responses[c.link] = ['REDIRECT: %s' % redirect]
         c.close()
         handles.remove(c)
 
@@ -99,8 +110,8 @@ def parallel_fetch(urls, cache=True, clear=False):
         handles.remove(c)
       num_processed += len(ok_list) + len(err_list)
 
-    m.select(60)
-    if time() - start > 60:
+    m.select(180)
+    if time() - start > 180:
       logger.error('Timeout: processing domain %s', list(urls)[0])
       logger.debug([url for url in urls if not responses[url]])
       break
@@ -111,5 +122,7 @@ def parallel_fetch(urls, cache=True, clear=False):
     if not cache or os.path.isfile('cache/%s.cache' % hash(url)): continue
     with open('cache/%s.cache' % hash(url), 'wb') as cache_file:  
       cache_file.write(responses[url])
-
+  
+  responses = {url:responses[url] for url  in responses 
+    if not responses[url].startswith('REDIRECT:')}
   return responses

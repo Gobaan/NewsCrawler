@@ -4,19 +4,21 @@ import helper
 import allCommentExtractors
 import allArticleExtractors
 
-Result = collections.namedtuple('Result', ['content', 'comments'])
+Result = collections.namedtuple('Result', ['content', 'comment_url', 'comments'])
 class CompleteParser(object):
   def __init__(self, contentExtractor, commentExtractor):
     self.contentExtractor = contentExtractor
     self.commentExtractor = commentExtractor
 
   def parse_all(self, articles):
-    data = helper.parallel_fetch(articles)
+    data = helper.parallel_fetch(articles, replace_redirects=True)
     content = self.contentExtractor.parse_all(data)
     comments = self.commentExtractor.parse_all(data)
-    results = {}
-    for url in content:
-      results[url] = Result(content[url], comments[url])
+    results = { url : Result(content[url], 
+                             self.commentExtractor.url_next[url], 
+                             comments[url]) 
+                for url in content }
+
     return results
 
 mapper = {}
@@ -27,3 +29,15 @@ for name in dir(allCommentExtractors):
   if isinstance(cls, generalParsers.Parser) and cls.site:
     articleParser = getattr(allArticleExtractors, name)
     mapper[cls.site] = CompleteParser(articleParser, cls)
+
+if __name__ == '__main__':
+  #debug
+  s = []
+  #s = ['http://arstechnica.com/apple/news/2012/01/apple-to-announce-tools-platform-to-digitally-destroy-textbook-publishing.ars']
+  #site = 'arstechnica.com'
+  parser = mapper[site]
+  for url, result in parser.parse_all(s).iteritems():
+    print url
+    print result.comment_url
+    for comment in result.comments:
+      print comment.text

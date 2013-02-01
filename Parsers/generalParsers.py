@@ -1,7 +1,7 @@
 from jsonpath import jsonpath
 from BeautifulSoup import BeautifulSoup, BeautifulStoneSoup
 from string import Template
-import json, re, collections, time
+import json, re, collections, time, urlparse, urllib
 import helper
 from types import FunctionType, MethodType
 logger = helper.get_logger()
@@ -32,13 +32,21 @@ class Parser(object):
     self.site = None
     self.max_iterations = 1
     self.starting = ""
+    self.found = set()
+    self.url_next = {}
+    self.template = ""
     for key in params:
       if type(params[key]) == FunctionType:
         params[key] = MethodType(params[key], self)
       setattr(self, key, params[key])
 
   def rename(self, url, site):
-    return Template(url)
+    if not self.template:
+      return Template(url)
+    path = urlparse.urlparse(url).path
+    args = {'url' : path,
+            'encoded_url' : urllib.quote(path, '')}
+    return Template(Template(self.template).safe_substitute(args))
   
   def set_template_urls(self):
     self.url_template = {}
@@ -67,9 +75,10 @@ class Parser(object):
     iteration = 1
     for iteration in xrange(1, self.max_iterations + 1):
       url_next = self.getNextUrls(iteration)
+      if iteration == 1: self.url_next = url_next
       if not url_next: break
       if iteration > 1: time.sleep(10)
-      nexturl_site = helper.parallel_fetch(url_next.values())
+      nexturl_site = helper.parallel_fetch(url_next.values(), replace_redirects = True)
       self.url_site = {url : nexturl_site[newurl] for url, newurl in url_next.iteritems()}
       self.mapping = {url : newurl for url, newurl in url_next.iteritems()}
       self.found = set()

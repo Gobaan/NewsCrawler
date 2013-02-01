@@ -3,13 +3,15 @@ import allParsers
 import helper
 logger = helper.get_logger()
 
-def parseBlogs(domain, lock, urls, filename, searchurl):
-  logger.info('%s %s', urls[0], filename)
-  results = allParsers.mapper[domain].parse_all(urls)
+def parseBlogs(domain, lock, search_results, filename, search_url):
+  logger.info('%s %s', search_results[0].link, filename)
+  sr_mapping = {result.link: result for result in search_results}
+  results = allParsers.mapper[domain].parse_all(sr_mapping.keys())
   docs = {'docs':[]}
-  docs['search'] = searchurl
+  docs['search'] = search_url
 
   for url in results:
+    search_result = sr_mapping[url]
     try:
       text = [content.text for content in results[url].content]
     except Exception, e:
@@ -21,9 +23,10 @@ def parseBlogs(domain, lock, urls, filename, searchurl):
     doc = {}
     doc['id'] = hash(url)
     doc['url'] = url
-    doc['title'] = 'Placeholder Title'
-    doc['date'] = 'Wed, 22 Dec 2010 18:12:32 EST'
+    doc['title'] = search_result.title
+    doc['date'] = search_result.date
     doc['article'] = article
+    doc['comment_url'] = results[url].comment_url
     comments = []
     for comment in results[url].comments:
       comm = {}

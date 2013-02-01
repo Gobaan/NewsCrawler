@@ -278,3 +278,8 @@ politico_iterative = IterativeParser(
                  (lambda url: True, politico),
                 ],
 )
+
+arstechnica = HtmlParser (
+  strainer = SoupStrainer('div', {u'class': u'article-content clearfix'}),
+  targets = SoupStrainer('div', {u'class': u'article-content clearfix'}),
+)
