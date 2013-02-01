@@ -21,7 +21,7 @@ class CompleteParser(object):
       result_comments = ["Comments Missing"]
       try:
         comment_url = self.commentExtractor.url_next[url] 
-        comments = comments[url] 
+        result_comments = comments[url] 
       except KeyError:
         pass
 
