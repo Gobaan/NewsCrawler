@@ -14,10 +14,18 @@ class CompleteParser(object):
     data = helper.parallel_fetch(articles, replace_redirects=True)
     content = self.contentExtractor.parse_all(data)
     comments = self.commentExtractor.parse_all(data)
-    results = { url : Result(content[url], 
-                             self.commentExtractor.url_next[url], 
-                             comments[url]) 
-                for url in content }
+    results = {}
+    for url in content:
+      result_content = content[url]
+      comment_url = "Error Url Not Found"
+      result_comments = ["Comments Missing"]
+      try:
+        comment_url = self.commentExtractor.url_next[url] 
+        comments = comments[url] 
+      except KeyError:
+        pass
+
+      results[url] = Result(result_content, comment_url, result_comments) 
 
     return results
 
