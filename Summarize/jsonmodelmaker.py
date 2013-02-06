@@ -7,6 +7,12 @@ from preprocessing import preprocess_string
 from nltk.stem.porter import PorterStemmer
 from datetime import date
 
+modes = ['before', 'after', 'during', 'all']
+
+def print_usage():
+  print "usage: jsonmodelmaker.py <folder> <mode> <date> [query terms]"
+  print "modes: %s" % ','.join(modes)
+
 spaceFinder = re.compile('([^A-Z])([.!?,])([A-Z])')
 def insert_spaces(matchobj):
    return matchobj.group(0) + matchobj.group(1) + ' ' + matchobj.group(2)
@@ -20,34 +26,25 @@ def get_terms(text):
           for word in nltk.word_tokenize(sentence)]
 
 folder = sys.argv[1]
-filtername = sys.argv[2]
+mode = sys.argv[2].lower()
+filtername = sys.argv[3]
+if mode not in modes: 
+  print_usage()
+  sys.exit(1)
 
-if filtername.startswith('>'):
-  mode = 'Greater'
-elif filtername.startswith('<'):
-  mode = 'Less'
-elif filtername.startswith('='):
-  mode = 'Equal'
-else:
-  mode = 'All'
-
-if not filtername[0].isalnum():
-  filtername = filtername[1:]
-
-print filtername
 print mode
 def comparison(src, dst):
-  if mode == 'Equal':
+  if mode == 'during':
     return src == dst
-  elif mode == 'Greater':
+  elif mode == 'after':
     return src > dst
-  elif mode == 'Less':
+  elif mode == 'before':
     return src < dst
-  elif mode == 'All':
+  elif mode == 'all':
     return True
 
 foldername = os.path.basename(folder)
-query_terms = [query.lower() for query in sys.argv[3:]]
+query_terms = [query.lower() for query in sys.argv[4:]]
 
   
 #Share seen_urls files for a given query

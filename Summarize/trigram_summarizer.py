@@ -10,6 +10,11 @@ from preprocessing import preprocess_string
 from nltk.stem.porter import PorterStemmer
 from datetime import date
 
+modes = ['before', 'after', 'during', 'all']
+def print_usage():
+  print "usage: trigram_summarizer.py <folder> <mode> <date> [query terms]"
+  print "modes: %s" % ','.join(modes)
+
 spaceFinder = re.compile('([^A-Z])([.!?,])([A-Z])')
 def insert_spaces(matchobj):
    return matchobj.group(0) + matchobj.group(1) + ' ' + matchobj.group(2)
@@ -49,35 +54,26 @@ class Heap(object):
   def __str__(self): 
     return str([item for item in self.heap])
 
-query_terms = [query.lower() for query in sys.argv[3:]]
+query_terms = [query.lower() for query in sys.argv[4:]]
 folder = sys.argv[1]
-filtername = sys.argv[2]
+mode = sys.argv[2].lower()
+filtername = sys.argv[3]
 print folder, filtername
 foldername = os.path.basename(folder)
 
-filtername = sys.argv[2]
-if filtername.startswith('>'):
-  mode = 'Greater'
-elif filtername.startswith('<'):
-  mode = 'Less'
-elif filtername.startswith('='):
-  mode = 'Equal'
-else:
-  mode = 'All'
+if mode not in modes: 
+  print_usage()
+  sys.exit(1)
 
-if not filtername[0].isalnum():
-  filtername = filtername[1:]
-
-print filtername
 print mode
 def comparison(src, dst):
-  if mode == 'Equal':
+  if mode == 'during':
     return src == dst
-  elif mode == 'Greater':
+  elif mode == 'after':
     return src > dst
-  elif mode == 'Less':
+  elif mode == 'before':
     return src < dst
-  elif mode == 'All':
+  elif mode == 'all':
     return True
 
 filterparts = [int(value) for value in filtername.split('.')]
